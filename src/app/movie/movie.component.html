@@ -1,0 +1,11 @@
+<p>movie works!</p>
+
+<div fxLayout="row wrap">
+    <div class="border-4 mt-4 mr-4 w-96 p-4" *ngFor="let movie of upcomingMovies">
+        <div class="text-3xl">{{movie.title}}</div>
+        <p>{{movie.overview}}</p>
+        <img [src]="'https://image.tmdb.org/t/p/w342'+movie.backdrop_path" alt="">
+    </div>
+</div>
+
+

@@ -1,0 +1,35 @@
+<p>contact-us works!</p>
+
+<form action="" [formGroup]="myReactiveForm">
+    <mat-form-field>
+        <mat-label>User Name</mat-label>
+        <input matInput placeholder="Your Name" formControlName="username">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Your Email" formControlName="email">
+    </mat-form-field>
+    <br>
+    <div formArrayName="skills">
+        <div *ngFor="let skill of myReactiveForm.get('skills').controls ; index as i">
+            <mat-form-field>
+                <mat-label>Skills</mat-label>
+                <input matInput placeholder="Enter Skill" [formControlName]="i">
+            </mat-form-field>
+            <button>
+                <mat-icon color="warn" (click)="removeSkill(i)">close</mat-icon>
+            </button>
+        </div>
+            
+        
+        
+        <mat-icon mat-icon-button class="mr-8" color="primary" (click)="addSkill()">add_circle</mat-icon>
+    </div>
+    
+    <br>
+    
+    <button mat-raised-button color="primary" (click)="onSubmit()">
+        Submit
+    </button>
+</form>

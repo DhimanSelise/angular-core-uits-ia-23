@@ -1,0 +1,27 @@
+<p>home works!</p>
+
+
+<button color="primary" mat-raised-button>Basic</button>
+
+<button mat-icon-button color="warn">
+    <mat-icon>add_box</mat-icon>
+</button>
+
+<hr>
+
+<mat-form-field>
+    <input matInput placeholder="User" type="text">
+</mat-form-field>
+
+
+<h2>Programming Language list</h2>
+<div *ngFor="let uni of universities">
+    <span>{{uni}}</span>
+</div>
+
+<h2>Age list</h2>
+<div *ngFor="let age of ages">
+    <span *ngIf="age <= 20">{{age}}</span>
+</div>
+
+
